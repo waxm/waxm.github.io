@@ -692,45 +692,19 @@ footer {
 }
 
 .player-stage {
-  align-items: center;
   display: flex;
   flex: 1;
-  flex-direction: column;
-  justify-content: center;
   min-height: 0;
-  padding: 24px;
+  padding: 0;
 }
 
-.device-frame {
-  background: #111217;
-  border: 1px solid rgba(242, 240, 233, 0.18);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.48);
-  height: min(83vh, 900px);
-  overflow: hidden;
-  position: relative;
-  width: min(47vh, 640px);
-}
-
-.device-frame::before {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  content: "";
-  inset: 6px;
-  pointer-events: none;
-  position: absolute;
-  z-index: 2;
-}
-
-.device-frame iframe {
+.game-frame {
   background: #0c1422;
   border: 0;
+  flex: 1;
   height: 100%;
+  min-height: 0;
   width: 100%;
-}
-
-.player-stage > p {
-  color: #77746f;
-  font-size: 10px;
-  margin: 13px 0 0;
 }
 
 .coming-soon {
@@ -837,20 +811,6 @@ footer {
     font-size: 10px;
   }
 
-  .player-stage {
-    padding: 0;
-  }
-
-  .device-frame {
-    border: 0;
-    height: 100%;
-    width: 100%;
-  }
-
-  .device-frame::before,
-  .player-stage > p {
-    display: none;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

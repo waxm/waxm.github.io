@@ -151,17 +151,13 @@ function GamePlayer({
       </header>
       <main className="player-stage">
         {game.status === "live" ? (
-          <>
-            <div className="device-frame">
-              <iframe
-                key={game.id}
-                src={game.url}
-                title={game.title}
-                allow="autoplay; fullscreen"
-              />
-            </div>
-            <p>如果游戏没有自动显示，请选择右上角“新窗口打开”。</p>
-          </>
+          <iframe
+            className="game-frame"
+            key={game.id}
+            src={game.url}
+            title={game.title}
+            allow="autoplay; fullscreen"
+          />
         ) : (
           <div className="coming-soon">
             <span>BUILD IN PROGRESS</span>
