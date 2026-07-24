@@ -26,7 +26,7 @@ const games: Game[] = [
       "从一个小方块出发，收集数字、延伸轨迹，在圆形竞技场里与智能对手争夺最终排名。",
     url: "https://waxm.github.io/Work_AI/game2048/",
     sourceUrl: "https://github.com/waxm/Work_AI/tree/codex/2048-game",
-    status: "soon",
+    status: "live",
     tags: ["Cocos Creator", "2D Arena", "2048"],
     accent: "coral",
     index: "01",
