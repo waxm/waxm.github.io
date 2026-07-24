@@ -24,8 +24,8 @@ const games: Game[] = [
     eyebrow: "数字吞噬 · 实时移动",
     description:
       "从一个小方块出发，收集数字、延伸轨迹，在圆形竞技场里与智能对手争夺最终排名。",
-    url: "https://waxm.github.io/Work_AI/game2048/",
-    sourceUrl: "https://github.com/waxm/Work_AI/tree/codex/2048-game",
+    url: "https://waxm.github.io/game-2048/",
+    sourceUrl: "https://github.com/waxm/game-2048",
     status: "live",
     tags: ["Cocos Creator", "2D Arena", "2048"],
     accent: "coral",
@@ -37,8 +37,8 @@ const games: Game[] = [
     eyebrow: "经典拼图 · 轻量体验",
     description:
       "拖动碎片完成图像，在有限步数里寻找正确位置。适合随时打开、马上开始的一局小游戏。",
-    url: "https://waxm.github.io/Work_AI/",
-    sourceUrl: "https://github.com/waxm/Work_AI/tree/codex/puzzle",
+    url: "https://waxm.github.io/game-puzzle/",
+    sourceUrl: "https://github.com/waxm/game-puzzle",
     status: "live",
     tags: ["Cocos Creator", "Puzzle", "Portrait"],
     accent: "violet",
