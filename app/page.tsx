@@ -44,6 +44,19 @@ const games: Game[] = [
     accent: "violet",
     index: "02",
   },
+  {
+    id: "TraceLight",
+    title: "轨迹拾光",
+    eyebrow: "轨迹穿行 · 方向切换",
+    description:
+      "点击屏幕切换移动方向，沿关卡轨迹往复穿行，接住金币、避开炸弹并完成收集目标。",
+    url: "https://waxm.github.io/game-trace-light/",
+    sourceUrl: "https://github.com/waxm/game-trace-light",
+    status: "live",
+    tags: ["Cocos Creator", "Arcade", "Portrait"],
+    accent: "cyan",
+    index: "03",
+  },
 ];
 
 function getHashGameId(): string | null {
@@ -84,6 +97,32 @@ function PuzzlePreview() {
   );
 }
 
+function TracePreview() {
+  return (
+    <div className="trace-preview" aria-hidden="true">
+      <span className="trace-route trace-route-one" />
+      <span className="trace-route trace-route-two" />
+      <span className="trace-pickup trace-coin trace-coin-one">●</span>
+      <span className="trace-pickup trace-coin trace-coin-two">●</span>
+      <span className="trace-pickup trace-bomb">✦</span>
+      <span className="trace-runner">↗</span>
+      <span className="trace-direction">TAP · REVERSE</span>
+    </div>
+  );
+}
+
+function GamePreview({ gameId }: { gameId: string }) {
+  if (gameId === "Game2048") {
+    return <ArenaPreview />;
+  }
+
+  if (gameId === "Puzzle") {
+    return <PuzzlePreview />;
+  }
+
+  return <TracePreview />;
+}
+
 function GameCard({ game }: { game: Game }) {
   return (
     <article className={`game-card game-card-${game.accent}`}>
@@ -96,7 +135,7 @@ function GameCard({ game }: { game: Game }) {
       </div>
 
       <a className="game-visual" href={`#${game.id}`} aria-label={`打开${game.title}`}>
-        {game.id === "Game2048" ? <ArenaPreview /> : <PuzzlePreview />}
+        <GamePreview gameId={game.id} />
         <span className="visual-action">
           <span>PLAY</span>
           <strong>↗</strong>
@@ -166,7 +205,7 @@ function GamePlayer({
           <div className="coming-soon">
             <span>BUILD IN PROGRESS</span>
             <strong>正在准备网页版</strong>
-            <p>2048 竞技场完成发布后，这个入口会直接加载游戏。</p>
+            <p>网页版完成发布后，这个入口会直接加载游戏。</p>
           </div>
         )}
       </main>
@@ -251,7 +290,7 @@ export default function Home() {
             <p>SELECTED GAMES</p>
             <h2>当前作品</h2>
           </div>
-          <span>02 / 持续更新</span>
+          <span>03 / 持续更新</span>
         </div>
         <div className="game-grid">
           {games.map((game) => (
