@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 
 type GameStatus = "live" | "soon";
 
@@ -57,6 +58,19 @@ const games: Game[] = [
     accent: "cyan",
     index: "03",
   },
+  {
+    id: "CowPuzzle",
+    title: "小牛去哪儿",
+    eyebrow: "颜色推理 · 寻找小牛",
+    description:
+      "从一头已知小牛开始，根据颜色、行列和不相邻规则找齐小牛。单击标记，双击放牛，带着三颗红心挑战 30 关。",
+    url: "/games/cow-puzzle/",
+    sourceUrl: "https://github.com/waxm/game-cow-puzzle",
+    status: "live",
+    tags: ["Cocos Creator", "Logic Puzzle", "Portrait"],
+    accent: "cyan",
+    index: "04",
+  },
 ];
 
 function getHashGameId(): string | null {
@@ -111,6 +125,20 @@ function TracePreview() {
   );
 }
 
+function CowPreview() {
+  const colors = ["#77BCE5", "#E2B957", "#AB95D7", "#65BDB0", "#A9BBDD", "#E8A2B8"];
+  const regions = [0, 0, 1, 1, 1, 1, 2, 0, 1, 1, 1, 1, 2, 0, 4, 4, 4, 4, 2, 2, 5, 3, 4, 4, 5, 5, 5, 5, 4, 4, 5, 5, 5, 5, 4, 4];
+  return (
+    <div className="cow-preview" aria-hidden="true">
+      {regions.map((region, index) => (
+        <span key={index} style={{ backgroundColor: colors[region] }}>
+          {index === 21 && <Image src="/cow-puzzle.png" alt="" width={128} height={100} />}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 function GamePreview({ gameId }: { gameId: string }) {
   if (gameId === "Game2048") {
     return <ArenaPreview />;
@@ -118,6 +146,10 @@ function GamePreview({ gameId }: { gameId: string }) {
 
   if (gameId === "Puzzle") {
     return <PuzzlePreview />;
+  }
+
+  if (gameId === "CowPuzzle") {
+    return <CowPreview />;
   }
 
   return <TracePreview />;
@@ -290,7 +322,7 @@ export default function Home() {
             <p>SELECTED GAMES</p>
             <h2>当前作品</h2>
           </div>
-          <span>03 / 持续更新</span>
+          <span>{String(games.length).padStart(2, "0")} / 持续更新</span>
         </div>
         <div className="game-grid">
           {games.map((game) => (

@@ -342,6 +342,31 @@ footer {
     linear-gradient(145deg, #238c8d, #145669);
 }
 
+.cow-preview {
+  aspect-ratio: 1;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 6px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 82%;
+}
+
+.cow-preview > span {
+  align-items: center;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+}
+
+.cow-preview img {
+  height: auto;
+  width: 92%;
+}
+
 .visual-action {
   align-items: center;
   background: var(--paper);
