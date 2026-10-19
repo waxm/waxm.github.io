@@ -63,7 +63,7 @@ const games: Game[] = [
     title: "小牛去哪儿",
     eyebrow: "颜色推理 · 寻找小牛",
     description:
-      "从一头已知小牛开始，根据颜色、行列和不相邻规则找齐小牛。单击标记，双击放牛，带着三颗红心挑战 120 关，交替体验 6×6、8×8 棋盘与四推专家关。",
+      "从一头已知小牛开始，根据颜色、行列和不相邻规则找齐小牛。单击标记，双击放牛，带着三颗红心挑战 150 关，交替体验 6×6、8×8、12×12 棋盘、联合颜色排除与四推专家关。",
     url: "/games/cow-puzzle/",
     sourceUrl: "https://github.com/waxm/game-cow-puzzle",
     status: "live",
