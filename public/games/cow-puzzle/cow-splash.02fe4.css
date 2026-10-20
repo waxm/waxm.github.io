@@ -76,7 +76,6 @@
 .cow-splash__orientation { display: none; position: absolute; inset: 45% 0 auto; text-align: center; font-size: 24px; font-weight: 600; }
 .cow-splash.is-error .cow-splash__tip { display: none; }
 @keyframes cow-float { 50% { transform: translateY(-6px); } }
-.cow-splash.is-landscape .cow-splash__ground { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); height: 43%; width: auto; min-width: 100%; object-fit: cover; object-position: bottom; }
-.cow-splash__stage { display: none; }
+.cow-splash.is-landscape .cow-splash__stage { display: none; }
 .cow-splash.is-landscape .cow-splash__orientation { display: block; }
 @media (prefers-reduced-motion: reduce) { .cow-splash, .cow-splash__fill, .cow-splash__head { transition: none; } .cow-splash__hero img { animation: none; } }
