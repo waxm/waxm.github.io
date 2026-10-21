@@ -6,6 +6,7 @@
   var track = splash.querySelector('.cow-splash__track');
   var fill = splash.querySelector('.cow-splash__fill');
   var retry = splash.querySelector('.cow-splash__retry');
+  var layout = splash.querySelector('.cow-splash__stage');
   var phase = 0;
   var finished = false;
   var fading = false;
@@ -15,7 +16,14 @@
   var resizeObserver;
 
   function resize() {
-    splash.classList.toggle('is-landscape', splash.clientWidth > splash.clientHeight);
+    var width = splash.clientWidth;
+    var height = splash.clientHeight;
+    splash.classList.toggle('is-landscape', width > height);
+    // 与 MainMenu.resize 的 AdaptiveExpand、标题及小牛坐标一致，淡出时原位接续。
+    var unit = Math.min(width / 640, height / 1136, layout.clientWidth / 640);
+    splash.style.setProperty('--cow-unit', unit + 'px');
+    splash.style.setProperty('--cow-hero-height', Math.min(390 * unit, Math.max(0, layout.clientHeight - 702 * unit)) + 'px');
+    splash.style.setProperty('--cow-ground-height', Math.max(width * 128 / 720, height / 2 - 80 * Math.min(width / 640, height / 1136)) + 'px');
   }
 
   function watchSlowLoad() {
