@@ -1,0 +1,26 @@
+{
+    "artifactId": "sig-game-kit@1.3.1",
+    "component": "@six/sig-game-kit",
+    "version": "1.3.1",
+    "gitCommit": "7bdf923de936eb12c47e903d35322858266d1b77",
+    "gitDirty": false,
+    "buildTime": "2026-10-10T11:41:49.100Z",
+    "builder": "packages/game-kit/build.js",
+    "toolchain": {
+        "node": "v24.17.0",
+        "esbuild": "0.28.2"
+    },
+    "dependencyLockHash": "538c1bbc732a223e9f6d37c472da133c3f4360cb005adc14e238116d5cf32a36",
+    "files": [
+        {
+            "filename": "sig-game-kit@1.3.1.js",
+            "bytes": 17209,
+            "integrity": "sha384-nUNYvsb0Dm89W12tanqqx6E8Ty2NjxuQjvC7SmCSYHv+xoGz9pUwv9btQAskXhMT"
+        },
+        {
+            "filename": "sig-game-kit@1.3.1.js.map",
+            "bytes": 152972,
+            "integrity": "sha384-oNSvmLwYaYOjE61M4auCgFjdb/wX3tFP3zRV8YAF23eHZILIdZ3VkiN2ZVLMHTdB"
+        }
+    ]
+}
