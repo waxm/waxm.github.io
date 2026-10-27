@@ -71,6 +71,19 @@ const games: Game[] = [
     accent: "cyan",
     index: "04",
   },
+  {
+    id: "LuluHome",
+    title: "一起回家噜",
+    eyebrow: "双人同步 · 一起回家",
+    description:
+      "一次方向，带动两位伙伴。借助墙壁、冰面与机关，让他们同时回到各自的集合垫；13 关主线，随时撤销和重来。",
+    url: "/games/lulu-home/",
+    sourceUrl: "",
+    status: "live",
+    tags: ["Cocos Creator", "Logic Puzzle", "Portrait"],
+    accent: "coral",
+    index: "05",
+  },
 ];
 
 function getHashGameId(): string | null {
@@ -140,6 +153,10 @@ function CowPreview() {
 }
 
 function GamePreview({ gameId }: { gameId: string }) {
+  if (gameId === "LuluHome") {
+    return <Image src="/lulu-home.jpg" alt="" fill sizes="(max-width: 800px) 100vw, 33vw" style={{ objectFit: "cover" }} />;
+  }
+
   if (gameId === "Game2048") {
     return <ArenaPreview />;
   }
@@ -186,9 +203,11 @@ function GameCard({ game }: { game: Game }) {
             <span key={tag}>{tag}</span>
           ))}
         </div>
-        <a href={game.sourceUrl} target="_blank" rel="noreferrer">
-          源码
-        </a>
+        {game.sourceUrl && (
+          <a href={game.sourceUrl} target="_blank" rel="noreferrer">
+            源码
+          </a>
+        )}
       </div>
     </article>
   );
