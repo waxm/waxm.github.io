@@ -12,6 +12,7 @@ interface Game {
   description: string;
   url: string;
   sourceUrl: string;
+  cover?: string;
   status: GameStatus;
   tags: string[];
   accent: string;
@@ -78,11 +79,26 @@ const games: Game[] = [
     description:
       "一次方向，带动两位伙伴。借助墙壁、冰面与机关，让他们同时回到各自的集合垫；13 关主线，随时撤销和重来。",
     url: "/games/lulu-home/",
+    cover: "/lulu-home.jpg",
     sourceUrl: "",
     status: "live",
     tags: ["Cocos Creator", "Logic Puzzle", "Portrait"],
     accent: "coral",
     index: "05",
+  },
+  {
+    id: "FairyFarm",
+    title: "溪谷物语",
+    eyebrow: "溪谷农场 · 田园经营",
+    description:
+      "在溪边种下第一粒小麦，浇水、收获，用收成完成订单，逐步开出鱼塘和果园。进度保存在当前浏览器，下次回来可以接着经营。",
+    url: "/games/fairy-farm/",
+    cover: "/fairy-farm.jpg",
+    sourceUrl: "",
+    status: "live",
+    tags: ["Cocos Creator", "农场经营", "竖屏"],
+    accent: "cyan",
+    index: "06",
   },
 ];
 
@@ -152,20 +168,20 @@ function CowPreview() {
   );
 }
 
-function GamePreview({ gameId }: { gameId: string }) {
-  if (gameId === "LuluHome") {
-    return <Image src="/lulu-home.jpg" alt="" fill sizes="(max-width: 800px) 100vw, 33vw" style={{ objectFit: "cover" }} />;
+function GamePreview({ game }: { game: Game }) {
+  if (game.cover) {
+    return <Image src={game.cover} alt="" fill sizes="(max-width: 800px) 100vw, 33vw" style={{ objectFit: "cover" }} />;
   }
 
-  if (gameId === "Game2048") {
+  if (game.id === "Game2048") {
     return <ArenaPreview />;
   }
 
-  if (gameId === "Puzzle") {
+  if (game.id === "Puzzle") {
     return <PuzzlePreview />;
   }
 
-  if (gameId === "CowPuzzle") {
+  if (game.id === "CowPuzzle") {
     return <CowPreview />;
   }
 
@@ -184,7 +200,7 @@ function GameCard({ game }: { game: Game }) {
       </div>
 
       <a className="game-visual" href={`#${game.id}`} aria-label={`打开${game.title}`}>
-        <GamePreview gameId={game.id} />
+        <GamePreview game={game} />
         <span className="visual-action">
           <span>PLAY</span>
           <strong>↗</strong>

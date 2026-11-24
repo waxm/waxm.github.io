@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Cocos Creator | 溪谷物语</title>
+
+  <!--http://www.html5rocks.com/en/mobile/mobifying/-->
+  <meta name="viewport"
+        content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui=true"/>
+
+  <!--https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- force webkit on 360 -->
+  <meta name="renderer" content="webkit"/>
+  <meta name="force-rendering" content="webkit"/>
+  <!-- force edge on IE -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <!-- force full screen on some browser -->
+  <meta name="full-screen" content="yes"/>
+  <meta name="x5-fullscreen" content="true"/>
+  <meta name="360-fullscreen" content="true"/>
+
+  <!--fix fireball/issues/3568 -->
+  <!--<meta name="browsermode" content="application">-->
+  <meta name="x5-page-mode" content="app">
+
+  <!--<link rel="apple-touch-icon" href=".png" />-->
+  <!--<link rel="apple-touch-icon-precomposed" href=".png" />-->
+
+  <link rel="stylesheet" type="text/css" href="style.02f4a.css"/>
+
+</head>
+<body>
+<style>
+#game-web-splash{position:fixed;inset:0;z-index:2147483647;display:grid;place-items:center;overflow:hidden;background:#172018;color:#644026;font-family:system-ui,sans-serif}
+#game-web-splash img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#game-web-splash .page{position:relative;width:min(100%,calc(100vh * 640 / 1136));height:100%}
+#game-web-splash .message{position:absolute;left:8%;right:8%;bottom:max(8%,env(safe-area-inset-bottom));text-align:center;font-size:clamp(15px,3.5vw,24px);line-height:1.6;text-shadow:0 1px 2px #fff4d3}
+#game-web-splash button{font:inherit;color:#644026;background:#f3ce89;border:2px solid #a46b35;border-radius:16px;padding:10px 24px;margin-top:8px}
+#game-web-splash [hidden]{display:none}
+</style>
+<div id="game-web-splash" role="status" aria-live="polite">
+  <img src="assets/fairy-farm-startup/native/5c/5c406eaa-d271-4b2d-88d6-675c8b184a9a.b5851.jpg" alt="溪谷物语"/>
+  <div class="page"><div class="message"><span>正在准备溪谷…</span><br/><button type="button" hidden>重新加载</button></div></div>
+</div>
+<script src="./game-splash.js"></script>
+
+  <div id="GameDiv" cc_exact_fit_screen="true">
+      <div id="Cocos3dGameContainer">
+        <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="99"></canvas>
+      </div>
+    </div>
+  
+
+<!-- Polyfills bundle. -->
+
+<script src="src/polyfills.bundle.43263.js" charset="utf-8"> </script>
+
+
+<!-- SystemJS support. -->
+<script src="src/system.bundle.543e6.js" charset="utf-8"> </script>
+
+<!-- Import map -->
+<script src="src/import-map.1f582.json" type="systemjs-importmap" charset="utf-8"> </script>
+
+<script>
+    System.import('./index.80b78.js').catch(function(err) { console.error(err); })
+</script>
+
+</body>
+</html>
